@@ -1,0 +1,14 @@
+import numpy as np
+from scipy.integrate import quad
+
+def integrand(x):
+    return 2025 * x**3 + np.sin(x) + np.exp(x)
+
+# Defining the limits of integration
+lower_limit = 0
+upper_limit = 2025
+
+# Calculating the integral
+result, error = quad(integrand, lower_limit, upper_limit)
+
+print(f"The result of the integral is: {result:.2e}")
